@@ -14,7 +14,8 @@
       <td>{{index+1}}</td>
       <td>{{basket.product.name}}</td>
       <td>
-        <input type="number" id="basketQuantity-{{basket.product.name}}" #inputQuantity (click)="changeData(basket, inputQuantity)" min="1" class="form-control" [value]="basket.quantity">
+        <input type="number" id="basketQuantity-{{basket.product.name}}" #inputQuantity
+          (click)="changeData(basket, inputQuantity)" min="1" class="form-control" [value]="basket.quantity">
       </td>
       <td>{{(basket.quantity* basket.product.price) | currency: 'TRY':'symbol-narrow':'1.2-2'}}</td>
       <td><button class="btn btn-sm btn-danger" (click)="deleteProduct(basket)">Sil</button></td>
@@ -22,17 +23,17 @@
     </tr>
   </tbody>
   <tfoot>
-   <tr>
-    <th></th>
-    <th></th>
-    <th>Toplam</th>
-    <!-- <th>{{total | currency: 'TRY':'symbol-narrow':'1.2-2'}}</th> -->
-    <th [innerText]="this.total  | currency: 'TRY':'symbol-narrow':'1.2-2'"></th>
-   </tr>
+    <tr>
+      <th></th>
+      <th></th>
+      <th>Toplam</th>
+      <!-- <th>{{total | currency: 'TRY':'symbol-narrow':'1.2-2'}}</th> -->
+      <th [innerText]="this.total  | currency: 'TRY':'symbol-narrow':'1.2-2'"></th>
+    </tr>
   </tfoot>
 </table>
 <div class="form-group text-center">
   <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#paymentModal">Ödeme Yap</button>
-<div class="form-group">
+  <div class="form-group">
 
-<app-payment></app-payment>
+    <app-payment></app-payment>
